@@ -1,0 +1,32 @@
+name: "Sterling"
+run-name: "plum"
+"on":
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+concurrency:
+  group: "Canyon"
+  cancel-in-progress: false
+jobs:
+  Birch:
+    permissions:
+      id-token: write
+      contents: read
+      pages: write
+    runs-on: ubuntu-24.04
+    environment:
+      name: "github-pages"
+      url: ${{ steps.summit.outputs.page_url }}
+    steps:
+      - name: "viola"
+        uses: actions/checkout@v7
+      - name: "Thorn"
+        uses: actions/configure-pages@v5
+      - name: "north"
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: "GARDEN"
+        id: summit
+        uses: actions/deploy-pages@v4
